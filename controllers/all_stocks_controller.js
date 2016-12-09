@@ -22,7 +22,7 @@ Stock.find({},function(err,results){
   results.forEach(function(elem){
 
     symbolArray.push(elem.stockSymbol);
-  });console.log("symbolArray",symbolArray);
+  });
 
   const dateObj = new Date();
   const month = dateObj.getUTCMonth() + 1; //months from 1-12

@@ -11,7 +11,7 @@ module.exports = function(req,res,next){
   const day = dateObj.getUTCDate();
   const year = dateObj.getUTCFullYear();
 
-  const startDate = (year - 1) + "-" + (month + 1) + "-" + day;
+  const startDate = (year - 1) + "-" + month + "-" + day;
   const endDate = year + "-" + month + "-" + day;
 
 

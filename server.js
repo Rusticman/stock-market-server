@@ -11,7 +11,7 @@ mongoose.connect(process.env.MONGODB_URL);
 
 // Express part
 const app = express();
-const server = app.listen(process.env.PORT || 3000, function (err) {
+const server = app.listen( process.env.PORT, function (err) {
   if (err) {
     console.error(err);
     return;
