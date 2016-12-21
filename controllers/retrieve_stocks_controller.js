@@ -14,7 +14,7 @@ module.exports = function(req,res,next){
   const startDate = (year - 1) + "-" + month + "-" + day;
   const endDate = year + "-" + month + "-" + day;
 
-
+console.log('startDate', startDate);
   yahooFinance.historical({
     symbol: symbol,
     from: startDate,
@@ -37,18 +37,18 @@ module.exports = function(req,res,next){
   var firstColour = colour.pickColour();
   var  secondColour = colour.pickColour();
 
-  var fillColour = colour.rgbColour(secondColour,0.2);
+  var fillColour = colour.rgbColour(secondColour,1);
 
 const  dataObj = dataModel.data;
       dataObj.label = symbol;
       dataObj.data = stockArr;
-      dataObj.borderColor = "#346e93";
-      dataObj.backgroundColor = fillColour;
+      dataObj.borderColor = firstColour;
+      dataObj.backgroundColor = secondColour;
       dataObj.pointBorderColor = firstColour;
-      dataObj.poinBackgroundColor = secondColour;
+      dataObj.pointBackgroundColor = secondColour;
   /*    dataObj.pointHoverBackgroundColor = firstColour;
       dataObj.pointHoverBorderColor = secondColour;*/
-      dataObj.fill = true;
+      dataObj.fill = false;
 
 
   const stock = new Stock({

@@ -4,20 +4,19 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const router = require('./routes');
-
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGODB_URL);
 
 // Express part
 const app = express();
-const server = app.listen( process.env.PORT, function (err) {
+const server = app.listen(process.env.PORT, function (err) {
   if (err) {
     console.error(err);
     return;
   }
 
-  console.log('Server started:', process.env.PORT);
+  console.log('Server started:',process.env.PORT);
 });
 
 app.use(morgan('combined'));
