@@ -65,9 +65,9 @@ var fillColour = colour.rgbColour(secondColour,0.2);
 
     var  data = {
           label: prop,
-          fill: true,//change fill to be translucent bordercolour
-          borderColor: "#346e93",//this is line colour. should be same as fill
-          backgroundColor:fillColour,
+          fill: false,//change fill to be translucent bordercolour
+          borderColor: firstColour,//this is line colour. should be same as fill
+          backgroundColor:secondColour,
           pointBorderColor:firstColour,
           pointBackgroundColor: secondColour,
           pointBorderWidth: 1,

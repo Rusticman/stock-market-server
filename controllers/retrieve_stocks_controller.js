@@ -7,14 +7,14 @@ module.exports = function(req,res,next){
 
   const symbol = req.params.symbol.toUpperCase();
   const dateObj = new Date();
-  const month = dateObj.getUTCMonth() + 1; //months from 1-12
+  const month = dateObj.getUTCMonth() ; //months from 1-12
   const day = dateObj.getUTCDate();
   const year = dateObj.getUTCFullYear();
 
-  const startDate = (year - 1) + "-" + month + "-" + day;
+  const startDate = (year - 1) + "-" + (month + 1) + "-" + day;
   const endDate = year + "-" + month + "-" + day;
 
-console.log('startDate', startDate);
+
   yahooFinance.historical({
     symbol: symbol,
     from: startDate,
